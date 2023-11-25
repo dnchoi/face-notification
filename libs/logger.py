@@ -70,13 +70,3 @@ class Logger:
         self.logger.setLevel(self.settings["LEVEL"])
 
         return self.logger
-
-
-if __name__ == "__main__":
-    level = "INFO"
-    logger = Logger(
-        class_name=os.path.basename(__file__).split(".")[0],
-        level=level,
-        file_path="logs",
-        save="True"
-    ).logger
