@@ -9,6 +9,6 @@ logs
 AdaFace
 logs
 test
-caffe_models
+# caffe_models
 *.npy
 *.pbtxt
