@@ -1,7 +1,0 @@
-FROM nvcr.io/nvidia/tritonserver:23.02-py3
-
-RUN apt update;
-
-COPY ./model_repository /models
-
-CMD ["tritonserver", "--model-repository=/models", "--model-control-mode=pol"]
