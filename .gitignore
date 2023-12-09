@@ -1,0 +1,15 @@
+__pycache__
+logs
+*.json
+*.jpeg
+*.jpg
+*.png
+*.json
+*.onnx
+AdaFace
+logs
+test
+# caffe_models
+*.npy
+*.pbtxt
+*.ipynb
