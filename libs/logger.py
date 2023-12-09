@@ -10,18 +10,15 @@ import colorlog
 class Logger:
     """class path finding logger"""
 
-    def __init__(
-        self,
-        class_name,
-        level: str = "INFO",
-        file_path: str = "logs",
-        save: bool = False,
-    ):
-        self.file_path = file_path
+    def __init__(self, class_name, lvl, file_path=None, save=True):
+        if file_path is None:
+            self.file_path = "./log"
+        else:
+            self.file_path = file_path
         os.makedirs(self.file_path, exist_ok=True)
 
         self.settings = {
-            "LEVEL": self.lookup_table(level),
+            "LEVEL": self.lookup_table(lvl),
             "FILENAME": class_name,
             "MAYBYTES": 15 * 1024 * 1024,
             "BACKUPCOUNT": 100,
@@ -70,3 +67,13 @@ class Logger:
         self.logger.setLevel(self.settings["LEVEL"])
 
         return self.logger
+
+
+if __name__ == "__main__":
+    level = "INFO"
+    log = Logger(
+        class_name=os.path.basename(__file__).split(".")[0],
+        lvl=level,
+        file_path="logs",
+    )
+    logger = log.logger_initialize()

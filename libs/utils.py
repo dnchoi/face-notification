@@ -4,8 +4,10 @@ import os
 
 logger = Logger(
     class_name=os.path.basename(__file__).split(".")[0],
+    lvl="INFO",
     file_path="logs",
 ).logger
+
 
 def read_config(config):
     cfg = None

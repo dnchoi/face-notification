@@ -1,3 +1,14 @@
 __pycache__
 logs
-config.json
+*.json
+*.jpeg
+*.jpg
+*.png
+*.json
+*.onnx
+AdaFace
+logs
+test
+caffe_models
+*.npy
+*.pbtxt
