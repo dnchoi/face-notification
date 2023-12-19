@@ -65,10 +65,10 @@ def main(cfg):
         collection=collection_name,
         target=test["file"],
     )
-    # print(f"{idx}\n{emb}\n{score}\n{name}")
 
-    response = sender.message_sender(
+    response = sender.file_sender(
         channel=slack["channel"],
+        filepath=test["file"],
         message=f"{name}[{round(score, 2)}] 찾았다.",
     )
     logger.info(response)

@@ -1,6 +1,7 @@
 import json
 from libs.logger import Logger
 import os
+import sys
 
 logger = Logger(
     class_name=os.path.basename(__file__).split(".")[0],
@@ -18,3 +19,4 @@ def read_config(config):
         return cfg
     except Exception as e:
         logger.error(f"Error in function {__name__}: {str(e)}")
+        sys.exit()
